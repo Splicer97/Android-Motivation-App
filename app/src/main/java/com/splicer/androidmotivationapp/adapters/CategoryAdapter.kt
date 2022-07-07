@@ -15,14 +15,14 @@ class CategoryAdapter : ListAdapter<String, CategoryAdapter.Holder>(Comparator()
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = CategoryItemBinding.bind(view)
-        fun setData(text: String) = with(binding){
+        fun setData(text: String) = with(binding) {
             tvCatTitle.text = text
             cardViewCat.backgroundTintList = ColorStateList
                 .valueOf(Color.parseColor(ContentManager.colorList[adapterPosition]))
         }
     }
 
-    class Comparator : DiffUtil.ItemCallback<String>(){
+    class Comparator : DiffUtil.ItemCallback<String>() {
         override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
             return oldItem == newItem
         }
@@ -34,7 +34,8 @@ class CategoryAdapter : ListAdapter<String, CategoryAdapter.Holder>(Comparator()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.category_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.category_item, parent, false)
         return Holder(view)
     }
 

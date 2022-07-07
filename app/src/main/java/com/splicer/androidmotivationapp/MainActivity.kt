@@ -1,8 +1,9 @@
 package com.splicer.androidmotivationapp;
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var adapter: CategoryAdapter? = null
     private var interAd: InterstitialAd? = null
+    private var timer: CountDownTimer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         initAdMob()
         (application as AppMainState).showAdIfAvailable(this){}
         initRcView()
+        binding.imageBg.setOnClickListener {
+            getResult()
+        }
 
     }
 
@@ -50,6 +55,20 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         binding.adView.destroy()
+    }
+    private fun getResult(){
+        var counter = 0
+        timer?.cancel()
+        timer = object : CountDownTimer(5000, 100){
+            override fun onTick(p0: Long) {
+                counter++
+                if(counter > 3)counter = 0
+                binding.imageBg.setImageResource(MainConst.imageList[counter])
+            }
+            override fun onFinish() {
+
+            }
+        }.start()
     }
 
     private fun initAdMob(){
