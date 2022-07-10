@@ -9,6 +9,8 @@ object MainConst {
     )
     val arrayList = listOf(
         R.array.love,
-        R.array.philosophy_array
+        R.array.philosophy_array,
+        R.array.sky_array,
+        R.array.three_array
     )
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="three_array">
+        <item>Добавте ваши фразы в массив|NECO</item>
+    </string-array>
+</resources>
