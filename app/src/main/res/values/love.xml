@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="love">
+        <item>love|0</item>
+        <item>love|1</item>
+        <item>love|2</item>
+        <item>love|3</item>
+        <item>love|4</item>
+        <item>love|5</item>
+        <item>love|6</item>
+        <item>love|7</item>
+        <item>love|8</item>
+        <item>love|9</item>
+    </string-array>
+</resources>

@@ -7,4 +7,8 @@ object MainConst {
         R.drawable.sky_bg,
         R.drawable.tree_bg,
     )
+    val arrayList = listOf(
+        R.array.love,
+        R.array.philosophy_array
+    )
 }
